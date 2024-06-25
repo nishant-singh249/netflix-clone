@@ -12,9 +12,12 @@ const Login = () => {
   const handleButtonClick = () => {
     // validate the form data
     //checkValidateData(email, password);
-    console.log(email.current.value);
-    console.log(password.current.value);
-    const message = checkValidateData(email.current.value, password.current.value);
+    //console.log(email.current.value);
+    //console.log(password.current.value);
+    const message = checkValidateData(
+      email.current.value,
+      password.current.value
+    );
     setErrorMessage(message);
   };
 
@@ -31,7 +34,10 @@ const Login = () => {
           alt="lgo"
         />
       </div>
-      <form onSubmit={(e) => e.preventDefault()} className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
+      >
         <h1 className="font-bold text-3xl py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
@@ -55,11 +61,16 @@ const Login = () => {
           placeholder="Password"
         />
         <p className="text-red-600 font-bold text-lg py-2">{errorMessage}</p>
-        <button className="p-4 my-6 w-full bg-red-600 rounded-lg" onClick={handleButtonClick}>
+        <button
+          className="p-4 my-6 w-full bg-red-600 rounded-lg"
+          onClick={handleButtonClick}
+        >
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
         <p className="p-4 cursor-pointer" onClick={toggleSignInForm}>
-          {isSignInForm ? "New to Netflix? Sign up now" : "Allready Ragistered User? Sign In now"}
+          {isSignInForm
+            ? "New to Netflix? Sign up now"
+            : "Allready Ragistered User? Sign In now"}
         </p>
       </form>
     </div>
